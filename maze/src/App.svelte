@@ -2,6 +2,16 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+  export let calories = 0;
+  let gender = Number((<HTMLSelectElement>document.getElementById('gender')).value);
+  if (gender == 1){
+    //(10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) + 5
+
+  }
+  else{
+    //Для женщин: (10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) − 161
+
+  }
 </script>
 
 <main>
@@ -9,17 +19,17 @@
     <div class="input">
       <div class = "height">
         <p>Рост</p>
-        <input type="text">
+        <input type="float">
       </div>
   
       <div class = "weight">
         <p>Вес</p>
-        <input type="text">
+        <input type="float">
       </div>
   
       <div class = "age">
         <p>Возраст</p>
-        <input type="text">
+        <input type="float">
       </div>
     </div>
 
@@ -27,15 +37,15 @@
 
       <div class="gender">
         <p>Пол</p>
-        <select name="gender" id="">
-          <option value="1">Мужской</option>
+        <select name="gender" id="gender">
+          <option value="1">Мужской </option>
           <option value="2">Женский</option>
         </select>
       </div>
 
       <div class="activity">
         <p>Пол</p>
-        <select name="activity" id="">
+        <select name="activity" id="activity">
           <option value="1.2">1 раз в неделю</option>
           <option value="1.25">2 раза в неделю</option>
           <option value="1.375">3 раза в неделю</option>
@@ -48,7 +58,11 @@
       </div>
 
     </div>
-
+    <div class="final">
+      <label for="calories">
+        {calories} Ккал 
+      </label>
+    </div>
   </div>
 </main>
 
