@@ -46,22 +46,55 @@
           <option value="1.9">2 раза в день</option>
         </select>
       </div>
+
+      <div class="Diet">
+        <p>Диета</p>
+        <select name="Diet" id="Diet">
+          <option value="1">Чтобы вес не менялся </option>
+          <option value="2">Для похудения</option>
+          <option value="3">Для набора мышечной массы</option>
+        </select>
+      </div>
+
 <script lang="ts">
   function myFunction() {
     let gender = Number((<HTMLSelectElement>document.getElementById('gender')).value);
+    let activity = Number((<HTMLSelectElement>document.getElementById('activity')).value);
+    let diet = Number((<HTMLSelectElement>document.getElementById('Diet')).value);
     var height = document.getElementById("height").value;
     var weight = document.getElementById("weight").value;
     var age = document.getElementById("age").value
 
     if (gender == 1){
-    //(10 × вес в килограммах) + (6,25 × рост в сантиметрах) − (5 × возраст в годах) + 5
-      calories = (10*weight) + (6,25 * height) - (5*age) + 5;
+      calories = ((10*weight) + (6,25 * height) - (5*age) + 5);
+      calories = calories * activity;
+      calories = calories / 2;
+      calories = calories - 1000;
+      if (diet == 2)
+      {
+        calories = calories - 400;
+      }
+      if (diet == 3)
+      {
+        calories = calories + 400;
+      }
 
     }
     else{
 
       calories = (10*weight) + (6,25 * height) - (5*age);
-      calories = calories - 165
+      calories = calories - 165;
+      calories = calories * activity;
+      calories = calories / 2;
+      calories = calories - 1000;
+      if (diet == 2)
+      {
+        calories = calories - 400;
+      }
+      if (diet == 3)
+      {
+        calories = calories + 400;
+      }
     }
     document.getElementById('calories').innerHTML=calories + "Ккал";
 };
