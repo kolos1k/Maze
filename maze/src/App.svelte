@@ -6,22 +6,49 @@
 
 <main>
   <div class="main-container">
-
-    <div class = "height">
-      <p>Рост</p>
-      <input type="text">
+    <div class="input">
+      <div class = "height">
+        <p>Рост</p>
+        <input type="text">
+      </div>
+  
+      <div class = "weight">
+        <p>Вес</p>
+        <input type="text">
+      </div>
+  
+      <div class = "age">
+        <p>Возраст</p>
+        <input type="text">
+      </div>
     </div>
 
-    <div class = "weight">
-      <p>Вес</p>
-      <input type="text">
+    <div class="select">
+
+      <div class="gender">
+        <p>Пол</p>
+        <select name="gender" id="">
+          <option value="1">Мужской</option>
+          <option value="2">Женский</option>
+        </select>
+      </div>
+
+      <div class="activity">
+        <p>Пол</p>
+        <select name="activity" id="">
+          <option value="1.2">1 раз в неделю</option>
+          <option value="1.25">2 раза в неделю</option>
+          <option value="1.375">3 раза в неделю</option>
+          <option value="1.55">4 раза в неделю</option>
+          <option value="1.6">5 раз в неделю</option>
+          <option value="1.7">6 раз в неделю</option>
+          <option value="1.8">каждый день</option>
+          <option value="1.9">2 раза в день</option>
+        </select>
+      </div>
+
     </div>
 
-    <div class = "age">
-      <p>Возраст</p>
-      <input type="text">
-    </div>
-    
   </div>
 </main>
 
