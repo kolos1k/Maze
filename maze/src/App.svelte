@@ -107,6 +107,7 @@
       </div>
   </div>
   <style>
+
     #con
     {
       border: gray 1px solid;
@@ -118,6 +119,7 @@
     button{
 
     }
+    
   </style>
 </main>
 
