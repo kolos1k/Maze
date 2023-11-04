@@ -96,7 +96,7 @@
         calories = calories + 400;
       }
     }
-    document.getElementById('calories').innerHTML=calories + "Ккал";
+    document.getElementById('calories').innerHTML=calories + "Ккал(kcal)";
 };
 </script>
     </div>
@@ -121,5 +121,3 @@
   </style>
 </main>
 
-<style>
-</style>
