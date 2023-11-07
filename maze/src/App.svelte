@@ -36,6 +36,7 @@
       <div class="activity" id = "con">
         <p>Степень физической активности</p>
         <select name="activity" id="activity">
+          <option value="1.2">не тренировался</option>
           <option value="1.2">1 раз в неделю</option>
           <option value="1.25">2 раза в неделю</option>
           <option value="1.375">3 раза в неделю</option>
