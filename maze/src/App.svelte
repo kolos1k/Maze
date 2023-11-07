@@ -36,9 +36,9 @@
       <div class="activity" id = "con">
         <p>Степень физической активности</p>
         <select name="activity" id="activity">
-          <option value="1.2">не тренировался</option>
+          <option value="1">не тренировался</option>
           <option value="1.2">1 раз в неделю</option>
-          <option value="1.25">2 раза в неделю</option>
+          <option value="1.275">2 раза в неделю</option>
           <option value="1.375">3 раза в неделю</option>
           <option value="1.55">4 раза в неделю</option>
           <option value="1.6">5 раз в неделю</option>
@@ -58,16 +58,23 @@
       </div>
 
 <script lang="ts">
-  function myFunction() {
+  function calculator() {
     let gender = Number((<HTMLSelectElement>document.getElementById('gender')).value);
     let activity = Number((<HTMLSelectElement>document.getElementById('activity')).value);
     let diet = Number((<HTMLSelectElement>document.getElementById('Diet')).value);
     var height = document.getElementById("height").value;
     var weight = document.getElementById("weight").value;
-    var age = document.getElementById("age").value
-
+    var age = document.getElementById("age").value;
+    // var obj = {
+    //   "weight":weight,
+    //   "age": age
+    // };
+    // var json_o = JSON.stringify(obj);
+    // console.log(json_o);
+    // const fs = require('fs');
+    // const json_weight = fs.writeFileSync('./python/json_weight.json', JSON.stringify(obj), {encoding: 'utf8', flag: 'w'});
     if (gender == 1){
-      calories = ((10*weight) + (6,25 * height) - (5*age) + 5);
+      calories = ((10 * weight) + (6,25 * height) - (5 * age) + 5);
       calories = calories * activity;
       calories = calories / 2;
       calories = calories - 1000;
@@ -77,7 +84,7 @@
       }
       if (diet == 3)
       {
-        calories = calories + 400;
+        calories = calories + 600;
       }
 
     }
@@ -94,7 +101,7 @@
       }
       if (diet == 3)
       {
-        calories = calories + 400;
+        calories = calories + 600;
       }
     }
     document.getElementById('calories').innerHTML=calories + "Ккал(kcal)";
@@ -102,7 +109,7 @@
 </script>
     </div>
       <div class="final" id = "con">
-        <button value="Сколько нужно калорий в день" onclick="myFunction()" > Сколько нужно калорий в день </button>
+        <button value="Сколько нужно калорий в день" onclick="calculator()" > Сколько нужно калорий в день </button>
         <p id= "calories">
         </p>
       </div>
