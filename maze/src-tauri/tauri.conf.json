@@ -15,7 +15,7 @@
     },
     "bundle": {
       "active": true,
-      "category": "fitness_tools",
+      "category": "Healthcare and Fitness",
       "copyright": "",
       "deb": {
         "depends": []
