@@ -58,26 +58,27 @@
       </div>
 
 <script lang="ts">
-  function calculator() {
+  // import fs from 'fs';
+  function calculator()
+  {
     let gender = Number((<HTMLSelectElement>document.getElementById('gender')).value);
     let activity = Number((<HTMLSelectElement>document.getElementById('activity')).value);
     let diet = Number((<HTMLSelectElement>document.getElementById('Diet')).value);
     var height = document.getElementById("height").value;
     var weight = document.getElementById("weight").value;
     var age = document.getElementById("age").value;
-    // var obj = {
-    //   "weight":weight,
+    // const obj = {
+    //   "weight": weight,
     //   "age": age
     // };
-    // var json_o = JSON.stringify(obj);
+    // const json_o = JSON.stringify(obj);
     // console.log(json_o);
-    // const fs = require('fs');
-    // const json_weight = fs.writeFileSync('./python/json_weight.json', JSON.stringify(obj), {encoding: 'utf8', flag: 'w'});
+    // fs.writeFileSync('./python/json_weight.json', JSON.stringify(obj), { encoding: 'utf8', flag: 'w' });
+
     if (gender == 1){
       calories = ((10 * weight) + (6,25 * height) - (5 * age) + 5);
       calories = calories * activity;
-      calories = calories / 2;
-      calories = calories - 1000;
+      calories = calories / 2.78;
       if (diet == 2)
       {
         calories = calories - 400;
@@ -93,8 +94,7 @@
       calories = (10*weight) + (6,25 * height) - (5*age);
       calories = calories - 165;
       calories = calories * activity;
-      calories = calories / 2;
-      calories = calories - 1000;
+      calories = calories / 2.78;
       if (diet == 2)
       {
         calories = calories - 400;
@@ -104,14 +104,34 @@
         calories = calories + 600;
       }
     }
-    document.getElementById('calories').innerHTML=calories + "Ккал(kcal)";
+    return calories.toFixed(2);
+};
+  function calories_() {
+    calories = calculator();
+    document.getElementById('calories').innerHTML= calories + "Ккал(kcal)";
+};
+function recipe()
+{
+  calories = calculator();
+  document.getElementById('recipe1').innerHTML= "<p>Молочная гречневая каша</p> <p>Энергетическа ценность на вашу порцию</p>" + ((calories/100)*6).toFixed(2) + " Грамм" +"<p></p>";
+  document.getElementById('recipe2').innerHTML= "<p>Плов</p>" + ((calories/100)*11).toFixed(2) + " Грамм" +"<p></p>";
+  document.getElementById('recipe3').innerHTML= "<p>Плов</p>" + ((calories/100)*8).toFixed(2) + " Грамм" +"<p></p>";
 };
 </script>
     </div>
       <div class="final" id = "con">
-        <button value="Сколько нужно калорий в день" onclick="calculator()" > Сколько нужно калорий в день </button>
+        <button value="Сколько нужно калорий в день" onclick="calories_()" > Сколько нужно калорий в день </button>
         <p id= "calories">
         </p>
+
+      </div>
+      <div class="recipe">
+        <div id="con">
+          <button value="рецепты на день" onclick="recipe()" > Рецепты на день </button>
+          <p id="recipe1"></p>
+          <p id="recipe2"></p>
+          <p id="recipe3"></p>
+        </div>
       </div>
   </div>
   <style>
@@ -130,4 +150,3 @@
     
   </style>
 </main>
-
