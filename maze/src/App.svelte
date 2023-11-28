@@ -112,10 +112,12 @@
 };
 function recipe()
 {
+  
   calories = calculator();
   document.getElementById('recipe1').innerHTML= "<p>Молочная гречневая каша</p> <p>Энергетическа ценность на вашу порцию</p>" + ((calories/100)*6).toFixed(2) + " Грамм" +"<p></p>";
   document.getElementById('recipe2').innerHTML= "<p>Плов</p>" + ((calories/100)*11).toFixed(2) + " Грамм" +"<p></p>";
   document.getElementById('recipe3').innerHTML= "<p>Плов</p>" + ((calories/100)*8).toFixed(2) + " Грамм" +"<p></p>";
+  
 };
 </script>
     </div>
